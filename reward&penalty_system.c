@@ -152,6 +152,7 @@ void menu()
 int main()
 {
 	int command;
+  int pluspoint, minuspoint;
 	element e;
 	TreeNode* root = NULL;
 	TreeNode* r = NULL;
@@ -184,17 +185,19 @@ int main()
 				}
 				else
 				{
-					printf(">> 그런 학생 없습니다.");
+					printf(">>학생을 찾을 수 없습니다.");
 					break;
 				}
 				break; 
 			case 3:
 				printf("학번: ");
 				scanf("%d",&e.number);
+        printf("추가 할 점수: ");
+        scanf("%d", &pluspoint);
 				tmp = search(root,e);//탐색함수 실행
 				if(tmp!= NULL)
 				{
-					tmp->key.point = tmp->key.point+1;
+					tmp->key.point = tmp->key.point+pluspoint;
 				}
 				else
 				{
@@ -204,10 +207,12 @@ int main()
 			case 4:
 				printf("학번: ");
 				scanf("%d",&e.number);
+        printf("벌점 점수: ");
+        scanf("%d", &minuspoint);
 				tmp = search(root,e);//탐색함수 실행
 				if(tmp!=NULL)
 				{
-					tmp->key.point = tmp->key.point-1;
+					tmp->key.point = tmp->key.point-minuspoint;
 				}
 				else
 				{
