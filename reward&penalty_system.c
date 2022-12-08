@@ -143,7 +143,8 @@ void menu()
 	printf("\n\t3 : 상점 추가\n");
 	printf("\n\t4 : 별점 추가\n");
 	printf("\n\t5 : 학생 검색\n");
-	printf("\n\t6 : 종료\n");
+  printf("\n\t6 : 학생 리스트\n");
+	printf("\n\t7 : 종료\n");
 	printf("\n*-----------------------*\n");
 	printf("\n메뉴 입력 >> ");
 }
@@ -229,9 +230,13 @@ int main()
 				{
 					printf(">> 그런 학생 없습니다.");
 				}
-				break;	
+				break;
+      case 6:
+         display(root);
+          printf("\n");
+          break;
 		} 
-	}while(command!=6);
+	}while(command!=7);
 	
 	printf(">종료되었습니다.");
 	
